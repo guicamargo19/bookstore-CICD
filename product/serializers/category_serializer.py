@@ -1,4 +1,5 @@
-from rest_framework import serializers  # type: ignore
+# type: ignore
+from rest_framework import serializers
 
 from product.models.category import Category
 
@@ -10,6 +11,6 @@ class CategorySerializer(serializers.ModelSerializer):
             'title',
             'slug',
             'description',
-            'active'
+            'active',
         ]
         extra_kwargs = {"slug": {"required": False}}
