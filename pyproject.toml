@@ -14,7 +14,10 @@ djangorestframework = "^3.14.0"
 django-extensions = "^3.2.3"
 django-debug-toolbar = "^4.3.0"
 
+[tool.poetry.dev-dependencies]
+pytest = "^8.0.2"
+factory-boy = "^3.3.0"
 
 [build-system]
-requires = ["poetry-core"]
+requires = ["poetry-core>1.0.0"]
 build-backend = "poetry.core.masonry.api"

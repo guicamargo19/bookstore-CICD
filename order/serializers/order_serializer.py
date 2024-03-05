@@ -25,7 +25,7 @@ class OrderSerializer(serializers.ModelSerializer):
         product_data = validated_data.pop('products_id')
         user_data = validated_data.pop('user')
 
-        order = Order.objects.create(user=user_data)  # **validated_data
+        order = Order.objects.create(user=user_data)
         for product in product_data:
             order.product.add(product)
 
