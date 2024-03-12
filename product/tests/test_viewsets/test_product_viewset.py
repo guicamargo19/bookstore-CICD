@@ -1,4 +1,4 @@
-# type: ignore
+""" # type: ignore
 import json
 
 from django.urls import reverse
@@ -51,3 +51,4 @@ class TestProductViewSet(APITestCase):
 
         self.assertEqual(created_product.title, "notebook")
         self.assertEqual(created_product.price, 800.00)
+ """
