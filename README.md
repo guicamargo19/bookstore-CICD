@@ -1,37 +1,56 @@
 # Bookstore
 
-Projeto Django Bookstore App com Poetry.
+Django project Bookstore App developed with Poetry.
 
-Projeto em desenvolvimento no curso de Full Stack Python da EBAC - Escola Britânica de Artes Criativas e Tecnologia.
+Project developed in the Full Stack Python course at EBAC - Escola Britânica de Artes Criativas e Tecnologia - Brazil.
 
-## Quickstart
+## ▶️ Prequisites
 
-1 - Clone este projeto:
+- Python 3.12
+- Poetry
+- Docker && Docker-Compose
 
-  **``git clone https://github.com/guicamargo19/bookstore.git``**
+## 🚀 Quickstart
 
-2 - Instale as dependencias:
+1 - Clone this project:
 
-  **``cd bookstore``**
-  **``poetry install``**
+  ```shell
+  git clone https://github.com/guicamargo19/bookstore.git
+  ```
 
-3 - Execute o projeto:
+2 - Install dependencies:
 
-**``poetry run python manage.py migrate``**
-**``poetry run python manage.py runserver``**
+  ```shell
+  cd bookstore
+  poetry install
+  ```
 
-### Testes
+3 - Execute project:
 
-Para efetuar os testes, execute o comando:
+  ```shell
+  poetry run python manage.py migrate
+  poetry run python manage.py runserver
+  ```
 
-  **``poetry run python manage.py test``**
+Run docker dev server environment:
 
-## 🛠️Ferramentas utilizadas para construção do projeto
+  ```shell
+  docker-compose up -d --build 
+  docker-compose run web python manage.py migrate
+  ```
 
-* **Poetry** - Ferramenta para gerenciamento de pacotes e dependências em Python.
-* **Django** -  Framework para desenvolvimento rápido para web, escrito em Python.
+5. Run tests inside of docker:
 
+  ```shell
+  docker-compose run --rm web python manage.py test
+  ```
 
-## ✒️ Autor
+## 🛠️ Tools used for the development of this project
+
+* **Poetry** - Tool for managing packages and dependencies in Python.
+* **Django** - Framework for fast web development, written in Python.
+* **Docker** - Set of platform-as-a-service products that use operating system-level virtualization to deliver software in packages called containers.
+
+## ✒️ Author
 
 Guilherme Ferreira Camargo
