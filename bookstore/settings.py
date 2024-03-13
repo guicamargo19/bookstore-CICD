@@ -21,12 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-_iuhsx)s3$k!fsw+%=o9l!3tagi$8j%k80df&^$!@bc2xx3jl9"
+# SECRET_KEY = "django-insecure-_iuhsx)s3$k!fsw+%=o9l!3tagi$8j%k80df&^$!@bc2xx3jl9"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
 
-ALLOWED_HOSTS: list[str] = []
+# ALLOWED_HOSTS: list[str] = []
 
 
 # Application definition
@@ -48,6 +48,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -129,6 +130,10 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 
+STATIC_ROOT = BASE_DIR / 'static'
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
@@ -152,4 +157,4 @@ SECRET_KEY = str(os.environ.get("SECRET_KEY"))
 
 DEBUG = bool(os.environ.get("DEBUG", default=0))
 
-ALLOWED_HOST = str(os.environ.get("DJANGO_ALLOWED_HOSTS")).split(" ")
+ALLOWED_HOSTS = str(os.environ.get("DJANGO_ALLOWED_HOSTS")).split(" ")
