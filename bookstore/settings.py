@@ -134,7 +134,7 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = BASE_DIR / 'static'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
@@ -163,4 +163,4 @@ DEBUG = bool(os.environ.get("DEBUG", default=0))
 
 # ALLOWED_HOSTS = str(os.environ.get("DJANGO_ALLOWED_HOSTS")).split(" ")
 ALLOWED_HOSTS = ['localhost', '127.0.0.1',
-                 'gcamargo.pythonanywhere.com', 'bookstore-ebac.herokuapp.com']
+                 'gcamargo.pythonanywhere.com']
