@@ -163,4 +163,4 @@ DEBUG = bool(os.environ.get("DEBUG", default=0))
 
 # ALLOWED_HOSTS = str(os.environ.get("DJANGO_ALLOWED_HOSTS")).split(" ")
 ALLOWED_HOSTS = ['localhost', '127.0.0.1',
-                 'gcamargo.pythonanywhere.com', 'bookstore-ebac.herokuapp.com']
+                 'gcamargo.pythonanywhere.com', 'bookstore-ebac-78b467543a54.herokuapp.com']
