@@ -17,6 +17,7 @@ psycopg2-binary = "^2.9.2"
 whitenoise = "^6.6.0"
 gunicorn = "^21.2.0"
 gitpython = "^3.1.42"
+python-dotenv = "^1.0.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^8.0.2"
