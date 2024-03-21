@@ -25,12 +25,12 @@ load_dotenv(BASE_DIR / '.env', override=True)
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = "django-insecure-_iuhsx)s3$k!fsw+%=o9l!3tagi$8j%k80df&^$!@bc2xx3jl9"
+SECRET_KEY = "django-insecure-_iuhsx)s3$k!fsw+%=o9l!3tagi$8j%k80df&^$!@bc2xx3jl9"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
+DEBUG = True
 
-# ALLOWED_HOSTS: list[str] = []
+ALLOWED_HOSTS: list[str] = []
 
 
 # Application definition
@@ -47,7 +47,6 @@ INSTALLED_APPS = [
     "product",
     "rest_framework",
     "rest_framework.authtoken",
-    "debug_toolbar",
 ]
 
 MIDDLEWARE = [
@@ -143,10 +142,6 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-INTERNAL_IPS = [
-    "127.0.0.1",
-]
-
 REST_FRAMEWORK = {
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
     "PAGE_SIZE": 5,
@@ -161,6 +156,9 @@ SECRET_KEY = str(os.environ.get("SECRET_KEY"))
 
 DEBUG = bool(os.environ.get("DEBUG", default=0))
 
-# ALLOWED_HOSTS = str(os.environ.get("DJANGO_ALLOWED_HOSTS")).split(" ")
-ALLOWED_HOSTS = ['localhost', '127.0.0.1',
-                 'gcamargo.pythonanywhere.com']
+ALLOWED_HOSTS = str(os.environ.get("DJANGO_ALLOWED_HOSTS")).split(" ")
+
+try:
+    from bookstore.local_settings import *
+except ImportError:
+    ...
