@@ -12,12 +12,12 @@ factory-boy = "^3.3.0"
 django = "^5.0.2"
 djangorestframework = "^3.14.0"
 django-extensions = "^3.2.3"
-django-debug-toolbar = "^4.3.0"
 psycopg2-binary = "^2.9.2"
 whitenoise = "^6.6.0"
 gunicorn = "^21.2.0"
 gitpython = "^3.1.42"
 python-dotenv = "^1.0.1"
+django-types = "^0.19.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^8.0.2"

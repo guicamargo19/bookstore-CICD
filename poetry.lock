@@ -46,21 +46,6 @@ argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
-name = "django-debug-toolbar"
-version = "4.3.0"
-description = "A configurable set of panels that display various debug information about the current request/response."
-optional = false
-python-versions = ">=3.8"
-files = [
-    {file = "django_debug_toolbar-4.3.0-py3-none-any.whl", hash = "sha256:e09b7dcb8417b743234dfc57c95a7c1d1d87a88844abd13b4c5387f807b31bf6"},
-    {file = "django_debug_toolbar-4.3.0.tar.gz", hash = "sha256:0b0dddee5ea29b9cb678593bc0d7a6d76b21d7799cb68e091a2148341a80f3c4"},
-]
-
-[package.dependencies]
-django = ">=3.2.4"
-sqlparse = ">=0.2"
-
-[[package]]
 name = "django-extensions"
 version = "3.2.3"
 description = "Extensions for Django"
@@ -73,6 +58,20 @@ files = [
 
 [package.dependencies]
 Django = ">=3.2"
+
+[[package]]
+name = "django-types"
+version = "0.19.1"
+description = "Type stubs for Django"
+optional = false
+python-versions = ">=3.7,<4.0"
+files = [
+    {file = "django_types-0.19.1-py3-none-any.whl", hash = "sha256:b3f529de17f6374d41ca67232aa01330c531bbbaa3ac4097896f31ac33c96c30"},
+    {file = "django_types-0.19.1.tar.gz", hash = "sha256:5ae7988612cf6fbc357b018bbc3b3a878b65e04275cc46e0d35d66a708daff12"},
+]
+
+[package.dependencies]
+types-psycopg2 = ">=2.9.21.13"
 
 [[package]]
 name = "djangorestframework"
@@ -376,6 +375,17 @@ doc = ["sphinx"]
 test = ["pytest", "pytest-cov"]
 
 [[package]]
+name = "types-psycopg2"
+version = "2.9.21.20240311"
+description = "Typing stubs for psycopg2"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "types-psycopg2-2.9.21.20240311.tar.gz", hash = "sha256:722945dffa6a729bebc660f14137f37edfcead5a2c15eb234212a7d017ee8072"},
+    {file = "types_psycopg2-2.9.21.20240311-py3-none-any.whl", hash = "sha256:2e137ae2b516ee0dbaab6f555086b6cfb723ba4389d67f551b0336adf4efcf1b"},
+]
+
+[[package]]
 name = "tzdata"
 version = "2024.1"
 description = "Provider of IANA time zone data"
@@ -403,4 +413,4 @@ brotli = ["Brotli"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "28e878f8284009cfc4232646997484c2b5c61ef8228c03228c9372e2a767a646"
+content-hash = "fedf06cdcccfebb30094b7da369fae129489d4570abf8bda3586fb97894ca14d"
