@@ -62,7 +62,7 @@ WORKDIR /app
 
 COPY . /app/
 
-EXPOSE 8000
+# EXPOSE 8000
 
 # RUN python manage.py migrate
 
