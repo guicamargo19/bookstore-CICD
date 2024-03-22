@@ -31,7 +31,7 @@ ENV PYTHONUNBUFFERED=1 \
 # prepend poetry and venv to path
 ENV PATH="$POETRY_HOME/bin:$VENV_PATH/bin:$PATH"
 
-ENV PORT 8080
+ENV PORT 8000
 
 ENV HOST 0.0.0.0
 
@@ -45,7 +45,7 @@ RUN apt-get update \
 
 # install poetry - respects $POETRY_VERSION & $POETRY_HOME
 RUN pip install poetry
-RUN  poetry init
+RUN poetry init
 
 # install postgres dependencies inside of Docker
 RUN apt-get update \
@@ -66,9 +66,9 @@ WORKDIR /app
 
 COPY . /app/
 
-# EXPOSE 8000
+EXPOSE 8000
 
-# RUN python manage.py migrate
+RUN python manage.py migrate
 
 CMD ["python", "manage.py", "runserver"]
 
