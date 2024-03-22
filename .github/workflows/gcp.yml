@@ -28,7 +28,8 @@ jobs:
 
       # build image
       - name: Build Docker image
-        run: docker build -t $IMAGE_NAME .
+        run: docker buildx build --platform linux/amd64 -t $IMAGE_NAME .
+        #docker build -t $IMAGE_NAME .
 
       # push image to registry
       - name: Push Docker image
@@ -36,4 +37,5 @@ jobs:
 
       # deploy image
       - name: Deploy Docker image
-        run: gcloud run deploy site --image $IMAGE_NAME --region us-central1 --memory 128Mi --min-instances 0 --max-instances 1 --platform managed --allow-unauthenticated --port 80
+        run: gcloud run deploy site --image $IMAGE_NAME --region us-central1 --memory 128Mi --min-instances 0 --max-instances 1 --platform managed --allow-unauthenticated
+      # --port 80
