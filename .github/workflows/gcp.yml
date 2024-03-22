@@ -37,5 +37,4 @@ jobs:
 
       # deploy image
       - name: Deploy Docker image
-        run: gcloud run deploy site --image $IMAGE_NAME --region us-central1 --memory 128Mi --min-instances 0 --max-instances 1 --platform managed --allow-unauthenticated
-      # --port 80
+        run: gcloud run deploy site --image $IMAGE_NAME --region us-central1 --memory 128Mi --min-instances 0 --max-instances 1 --platform managed --allow-unauthenticated --port 80
