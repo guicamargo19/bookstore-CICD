@@ -1,5 +1,5 @@
 # Usando a imagem python:3.11-slim como base
-FROM python:3.12-slim
+FROM python:3.10.5-slim
 
 # Definindo variáveis de ambiente
 ENV PYTHONUNBUFFERED=1 \
