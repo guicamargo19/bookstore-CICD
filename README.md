@@ -6,7 +6,7 @@ Project developed in the Full Stack Python course at EBAC - Escola Britânica de
 
 ## ▶️ Prequisites
 
-- Python 3.10
+- Python 3.10.5
 - Poetry
 - Docker && Docker-Compose
 
