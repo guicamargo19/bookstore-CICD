@@ -82,6 +82,13 @@ WSGI_APPLICATION = "bookstore.wsgi.application"
 
 DATABASES = {
     "default": {
+        "ENGINE": os.environ.get("django.db.backends.sqlite3"),
+        "NAME": BASE_DIR / "db.sqlite3",
+    }
+}
+
+""" DATABASES = {
+    "default": {
         "ENGINE": os.getenv("SQL_ENGINE", "django.db.backends.sqlite3"),
         "NAME": os.getenv("SQL_DATABASE", BASE_DIR / "db.sqlite3"),
         "USER": os.getenv("SQL_USER", "user"),
@@ -89,7 +96,7 @@ DATABASES = {
         "HOST": os.getenv("SQL_HOST", "localhost"),
         "PORT": os.getenv("SQL_PORT", "5432"),
     }
-}
+} """
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -148,12 +155,8 @@ REST_FRAMEWORK = {
     ],
 }
 
-SECRET_KEY = str(os.getenv("SECRET_KEY"))  # environ.get
+SECRET_KEY = str(os.environ.get("SECRET_KEY"))
 
-DEBUG = bool(os.getenv("DEBUG", default=0))
+DEBUG = bool(os.environ.get("DEBUG", default=0))
 
 # ALLOWED_HOSTS = str(os.environ.get("DJANGO_ALLOWED_HOSTS")).split(" ")
-
-INTERNAL_IPS = [
-    "127.0.0.1",
-]
