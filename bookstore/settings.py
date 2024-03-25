@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "2#ptzy#!19qyrv1%=7vjff1fa)%04t!s)2qko4)=w-aj)@#zr"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1", "gcamargo.pythonanywhere.com"]
 

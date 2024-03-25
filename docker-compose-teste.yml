@@ -1,0 +1,39 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: 'bookstore_db'
+      POSTGRES_USER: 'dev'
+      POSTGRES_PASSWORD: 'dev'
+    networks:
+      - backend
+
+  web:
+    build: .
+    command: >
+      sh -c "python manage.py migrate &&
+             python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/code
+    ports:
+      - "8080:8000"
+    depends_on:
+      - db
+    environment:
+      - DEBUG=1
+      - SECRET_KEY=foo
+      - DJANGO_ALLOWED_HOSTS=localhost,127.0.0.1,[::1]
+      - SQL_ENGINE=django.db.backends.postgresql
+      - SQL_DATABASE=bookstore_db
+      - SQL_USER=dev
+      - SQL_PASSWORD=dev
+      - SQL_HOST=db
+      - SQL_PORT=5432
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge
