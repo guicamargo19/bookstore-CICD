@@ -1,6 +1,8 @@
 # Bookstore
 
-Django project Bookstore App developed with Poetry.
+Django project Bookstore App developed with Poetry for academic purposes.
+
+This project contains CI/CD with GitHub Actions. Deploy was made at PythonAnywhere.
 
 Project developed in the Full Stack Python course at EBAC - Escola Britânica de Artes Criativas e Tecnologia - Brazil.
 
@@ -8,7 +10,7 @@ Project developed in the Full Stack Python course at EBAC - Escola Britânica de
 
 - Python 3.10.5
 - Poetry
-- Docker && Docker-Compose
+- Docker && Docker-compose
 
 ## 🚀 Quickstart
 
@@ -29,6 +31,7 @@ Project developed in the Full Stack Python course at EBAC - Escola Britânica de
 
   ```shell
   poetry run python manage.py migrate
+  poetry run python manage.py collectstatic
   poetry run python manage.py runserver
   ```
 
